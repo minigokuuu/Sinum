@@ -3,7 +3,7 @@ app.get("/*/api/game/v2/matchmakingservice/ticket/player/*", verifyToken, async 
     if (req.user.isServer == true) return res.status(403).end();
     if (req.user.matchmakingId == null) return res.status(400).end();
  
-    const playerCustomKey = qs.parse(req.url.split("?")[1], { ignoreQueryPrefix: true })['player.option.customKey'];
+    const playerCustomKey = qs.parse(req.url.split("?")[1], { ignoreQueryPrefix:true })['player.option.customKey'];
     const bucketId = qs.parse(req.url.split("?")[1], { ignoreQueryPrefix: true })['bucketId'];
  
  
